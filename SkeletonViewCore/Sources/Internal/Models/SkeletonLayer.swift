@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 struct SkeletonLayer {
     
     private var maskLayer: CALayer
