@@ -49,7 +49,6 @@ extension UIView: Recoverable {
 
 extension UILabel {
     
-    
     var labelState: RecoverableLabelState? {
         get {
             // Safely retrieve the associated object
@@ -60,7 +59,6 @@ extension UILabel {
             ao_setOptional(newValue, pkey: &ViewAssociatedKeys.labelViewState)
         }
     }
-
     
     override func saveViewState() {
         super.saveViewState()

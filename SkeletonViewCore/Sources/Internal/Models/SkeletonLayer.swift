@@ -92,8 +92,12 @@ struct SkeletonLayer {
     
     var holderAsTextView: SkeletonTextNode? {
         guard let textView = holder as? SkeletonTextNode,
-            (textView.estimatedNumberOfLines == -1 || textView.estimatedNumberOfLines == 0 || textView.estimatedNumberOfLines > 1 || textView.estimatedNumberOfLines == 1 && !SkeletonAppearance.default.renderSingleLineAsView) else {
-                return nil
+              textView.estimatedNumberOfLines == -1 ||
+              textView.estimatedNumberOfLines == 0 ||
+              textView.estimatedNumberOfLines > 1 ||
+              (textView.estimatedNumberOfLines == 1 && !SkeletonAppearance.default.renderSingleLineAsView)
+        else {
+            return nil
         }
         return textView
     }
